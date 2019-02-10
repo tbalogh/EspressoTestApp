@@ -56,19 +56,6 @@ public class LoginFragment extends Fragment {
         }
     }
 
-    private boolean validatePassword() {
-        if (passwordField.getText().toString().isEmpty()) {
-            passwordField.setError("Must be not empty!");
-            return false;
-        }
-        if (!VALID_PASSWORD.equals(passwordField.getText().toString())) {
-            passwordField.setError("Invalid credentials!");
-            return false;
-        }
-
-        return true;
-    }
-
     private boolean validateEmail() {
         if (emailField.getText().toString().isEmpty()) {
             emailField.setError("Must be not empty!");
@@ -79,7 +66,20 @@ public class LoginFragment extends Fragment {
             return false;
         }
         if (!VALID_EMAIL.equals(emailField.getText().toString())) {
-            emailField.setError("Invalid email credentials!");
+            emailField.setError("Invalid credentials!");
+            return false;
+        }
+
+        return true;
+    }
+
+    private boolean validatePassword() {
+        if (passwordField.getText().toString().isEmpty()) {
+            passwordField.setError("Must be not empty!");
+            return false;
+        }
+        if (!VALID_PASSWORD.equals(passwordField.getText().toString())) {
+            passwordField.setError("Invalid credentials!");
             return false;
         }
 

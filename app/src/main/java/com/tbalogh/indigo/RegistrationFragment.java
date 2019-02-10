@@ -55,7 +55,7 @@ public class RegistrationFragment extends Fragment {
             return false;
         }
         if (!isValidEmailAddress(emailField.getText().toString())) {
-            emailField.setError("Must be a valid email!");
+            emailField.setError("Invalid email format!");
             return false;
         }
 
